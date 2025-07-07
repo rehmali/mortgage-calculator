@@ -1,0 +1,275 @@
+/* Basic Formatting */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: jakarta-sans-italic;
+  src: url(assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: jakarta-sans;
+  src: url(assets/fonts/PlusJakartaSans-VariableFont_wght.ttf);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: aliceblue;
+  font-size: 16px;
+  font-family: jakarta-sans;
+}
+
+/* Layout */
+
+.main-card {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background-color: white;
+  border-radius: 15px; /*Its keeping right card top radius blue */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+@media screen and (max-width: 600px) {
+  .main-card {
+    flex-direction: column;
+  }
+}
+
+.row-1,
+.row-2,
+.row-3,
+.row-4,
+.row-5 {
+  padding-bottom: 20px;
+}
+
+.row-3 {
+  display: flex;
+  column-gap: 10px;
+  /* flex-direction: column; */
+}
+/* Cards inside layouts */
+
+.row-1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Styles */
+.mortgage-calculator,
+.mortgate-results {
+  width: 90%;
+  max-width: 400px;
+  flex: 1;
+}
+
+/* Styling First/Left Card or Calculator card */
+
+.mortgage-calculator {
+  background-color: white;
+  padding: 30px 20px;
+  font-size: 1em;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.text-clear {
+  text-decoration: underline;
+}
+.hero-heading {
+  font-size: 1.5rem;
+}
+.calculator-text {
+  color: #526771;
+  padding-bottom: 10px;
+}
+/* This removes spinner buttons */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+.input-wrapper {
+  position: relative;
+  width: 200px;
+}
+
+.currency-symbol {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 30px;
+  height: 90%;
+  /* line-height: 40px; */
+  background-color: #e3f4fc;
+  text-align: center;
+  padding-top: 3px;
+}
+
+.symbol-right {
+  left: 34%;
+}
+
+.year-perc-input {
+  width: 100px;
+}
+
+.input-height {
+  height: 40px;
+}
+input {
+  font-size: 1.3rem;
+}
+.input-mortagage-amount {
+  width: 340px;
+  padding-left: 30px;
+}
+
+.mortgage-type {
+  border: 1px solid rgba(0, 0, 0, 0.557);
+  height: 40px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  width: 95%;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+.radio-text {
+  display: inline-block;
+  padding-left: 10px;
+}
+.radio-text:hover {
+  cursor: pointer;
+}
+
+button {
+  width: 250px;
+  height: 40px;
+  background-color: #d9db30;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  font-weight: bolder;
+}
+/* Styling Second Card or Results card */
+.mortgate-results {
+  background-color: #133040;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 30px;
+  border-bottom-left-radius: 12%;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.text-empty {
+  color: #879fad;
+  text-align: center;
+  font-size: 14px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.heading-empty {
+  color: white;
+}
+
+/* Mortage results Completed */
+.mortgage-results-completed {
+  flex-direction: column;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  justify-content: flex-start;
+}
+
+.heading-completed {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: light;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.text-completed {
+  color: #93adbce0;
+  font-size: 12px;
+  /* padding-left: 20px; */
+  padding-right: 20px;
+}
+
+hr {
+  width: 80%;
+  display: flex;
+  justify-self: center;
+  /* padding-bottom: 20px; */
+}
+.completed-second-row {
+  background-color: #0e2431;
+  width: 100%;
+  border-top: 3px solid #c3ca30;
+  border-radius: 10px;
+  padding: 30px;
+}
+.text-final-repayment-result {
+  color: #d6dc31;
+  font-size: 3rem;
+  letter-spacing: 5px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.text-repay {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+.text-final-repay-term-result {
+  color: white;
+  font-weight: light;
+}
+/* ******* */
+/* Stying Hover states */
+input:hover {
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.mortgage-type:hover {
+  cursor: pointer;
+  border: 1px solid #d9db30;
+}
+
+/* Styling Active States */
+.active {
+  outline: none;
+  border: 2px solid #f1f7be;
+}
+
+/* Empty fields  */
+
+.empty-fields {
+  outline: none;
+  border: 2px solid red;
+}
+
+label.mortgage-type:has(input[type="radio"]:checked) {
+  background-color: #fafae0;
+}

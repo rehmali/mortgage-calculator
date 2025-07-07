@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="main-card">
+      <div class="mortgage-calculator">
+        <div class="row-1">
+          <h3 class="hero-heading">Mortgage Calculators</h3>
+          <p class="text-clear calculator-text">Clear All</p>
+        </div>
+
+        <div class="row-2">
+          <p class="calculator-text">Mortgage Amount</p>
+          <div class="input-wrapper">
+            <span class="currency-symbol currency-pound">£</span>
+            <input
+              class="input-height input-mortagage-amount"
+              type="number"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row-3">
+          <div class="row-3-1">
+            <p class="calculator-text">Mortgate Term</p>
+            <div class="input-wrapper">
+              <input
+                class="year-perc-input input-height"
+                type="number"
+                required
+              />
+              <span class="currency-symbol symbol-right">year</span>
+            </div>
+          </div>
+          <div class="row-3-2">
+            <p class="calculator-text">Interest Rate</p>
+            <div class="input-wrapper">
+              <input
+                class="year-perc-input prc-inpt input-height"
+                type="number"
+                required
+              />
+              <span class="currency-symbol symbol-right perc-symbol">%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row-4">
+          <p class="calculator-text">Mortgage Type</p>
+          <label class="mortgage-type">
+            <input type="radio" value="repayment" name="mortgage" />
+            <span class="radio-text"> Repayments</span>
+          </label>
+          <label class="mortgage-type">
+            <input type="radio" value="Interest Only" name="mortgage" />
+            <span class="radio-text">Interest only </span>
+          </label>
+        </div>
+
+        <div class="row-5">
+          <button type="submit" class="submit-btn">Calculate Repayments</button>
+        </div>
+      </div>
+
+      <div class="mortgate-results results-card">
+        <img
+          src="assets/images/illustration-empty.svg"
+          alt="picture calculatons"
+        />
+
+        <h2 class="heading-empty">Results shown here</h2>
+        <p class="text-empty">
+          Complete the form and click "calculate repayments"to shee what your
+          monthly repayments would be.
+        </p>
+      </div>
+
+      <!-- <div class="mortgate-results mortgage-results-completed">
+        <div class="completed-row-first">
+          <h2 class="heading-completed">Your results</h2>
+          <p class="text-completed">
+            Your results are shown below based on the information you provided.
+            To adjust the results , edit the form and click "calculate
+            repayments" again
+          </p>
+        </div>
+
+        <div class="completed-second-row">
+          <div class="completed-second-row-wrapper">
+            <p class="text-completed">Your monthly repayments</p>
+            <h2 class="text-final-repayment-result">1772.74</h2>
+          </div>
+          <hr />
+          <div class="completed-second-row-wrappaer-two">
+            <p class="text-completed text-repay">
+              Total you will repay over the term
+            </p>
+            <h2 class="text-final-repay-term-result">539,322.94</h2>
+          </div>
+        </div>
+
+        <div class="completed-row-second"></div>
+      </div> -->
+    </main>
+
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
