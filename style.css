@@ -117,6 +117,7 @@ input[type="number"] {
   background-color: #e3f4fc;
   text-align: center;
   padding-top: 3px;
+  transition: background-color 200ms ease-in;
 }
 
 .symbol-right {
@@ -244,14 +245,17 @@ hr {
 /* ******* */
 /* Stying Hover states */
 input:hover {
-  cursor: pointer;
+  cursor: text;
 }
 button:hover {
   opacity: 0.8;
   cursor: pointer;
   font-weight: bolder;
 }
-
+.mortgage-type {
+  transition: border-color 200ms ease-in-out;
+  transition: background-color 300ms ease-in;
+}
 .mortgage-type:hover {
   cursor: pointer;
   border: 1px solid #d9db30;
@@ -272,4 +276,28 @@ button:hover {
 
 label.mortgage-type:has(input[type="radio"]:checked) {
   background-color: #fafae0;
+}
+
+.text-clear {
+  cursor: pointer;
+}
+/********************
+****Transition of Cards **** 
+************************/
+
+.mortgate-results {
+  transition: opacity 400ms ease-in, transform 400ms ease-in;
+}
+
+/* hides empty card , so that results card show */
+
+.mortgate-results.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* When result is shown */
+.mortgate-results.show {
+  opacity: 1;
+  transform: translateY(0);
 }

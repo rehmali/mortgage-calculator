@@ -21,6 +21,8 @@ const repaymentsRadio = document.querySelector(
 );
 
 const submitButton = document.querySelector(".submit-btn");
+
+const clearButton = document.querySelector(".text-clear");
 // When user clicks a field that field should become active , having those styles
 
 /*********************** /
@@ -66,15 +68,13 @@ const mortgageCalculation = function (mortgageType) {
     const resultMonthlyRepayment = numerator / denominator;
     const resulttotalRepayment = resultMonthlyRepayment * numberofPayments;
 
-    console.log(resultMonthlyRepayment, resulttotalRepayment);
-    return [resultMonthlyRepayment.toFixed(2), resulttotalRepayment.toFixed(3)];
+    return [resultMonthlyRepayment.toFixed(2), resulttotalRepayment.toFixed(2)];
   } else if (mortgageType === "interestOnly") {
     const resultMonthlyInterestPayment =
       mortgageAmountPrinciple * monthlyInterestRate;
     const resultTotalInterestOnlyPayment =
       resultMonthlyInterestPayment * numberofPayments;
 
-    console.log(resultMonthlyInterestPayment, resultTotalInterestOnlyPayment);
     return [
       resultMonthlyInterestPayment.toFixed(2),
       resultTotalInterestOnlyPayment.toFixed(2),
@@ -83,6 +83,17 @@ const mortgageCalculation = function (mortgageType) {
     console.log("error");
   }
 };
+
+// Function to clear all fields
+
+function clearAll() {
+  mortgageAmount.value = null;
+  mortgageTerms.value = null;
+  percentageInput.value = null;
+
+  repaymentsRadio.checked = false;
+  interestOnlyRadio.checked = false;
+}
 /*****************
  * Event Listeners***
  ******************/
@@ -111,6 +122,7 @@ percentageInput.addEventListener("blur", () => {
   removeActiveField(percentageSymbol, percentageInput);
 });
 
+clearButton.addEventListener("click", clearAll);
 // listens for submission of Calculations
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -132,13 +144,11 @@ submitButton.addEventListener("click", (e) => {
     let monthly = 0;
     let totalmonthly = 0;
     if (repaymentsRadio.checked) {
-      console.log(`Repayment is checked `);
       const mt = mortgageCalculation("repayments");
       monthly = mt[0];
       totalmonthly = mt[1];
     }
     if (interestOnlyRadio.checked) {
-      console.log(`Interest is checked `);
       const mt = mortgageCalculation("interestOnly");
       console.log(mt);
       monthly = mt[0];
@@ -173,6 +183,15 @@ submitButton.addEventListener("click", (e) => {
         <div class="completed-row-second"></div>
       </div>
     `;
+
+    resultsEmptyCard.classList.remove("show"); // Reset previous state
     resultsEmptyCard.innerHTML = html;
+    resultsEmptyCard.classList.add("hidden");
+
+    setTimeout(() => {
+      resultsEmptyCard.innerHTML = html; // Replace content
+      resultsEmptyCard.classList.remove("hidden"); // Reset hidden
+      resultsEmptyCard.classList.add("show"); // Trigger fade-in
+    }, 200);
   }
 });
